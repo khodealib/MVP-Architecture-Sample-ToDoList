@@ -133,6 +133,7 @@
         android:visibility="gone"
         tools:visibility="visible"
         android:gravity="center_horizontal"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:orientation="vertical">
 
         <ImageView
