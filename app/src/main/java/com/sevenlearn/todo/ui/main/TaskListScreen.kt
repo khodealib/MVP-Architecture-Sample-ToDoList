@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -42,6 +43,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.sevenlearn.todo.R
 import com.sevenlearn.todo.data.Task
+import com.sevenlearn.todo.ui.TestTags
 import com.sevenlearn.todo.ui.components.TaskItem
 import com.sevenlearn.todo.ui.theme.PurplePrimary
 import com.sevenlearn.todo.ui.theme.PurplePrimaryDark
@@ -89,7 +91,8 @@ fun TaskListScreen(
                     onClick = onAddTask,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(52.dp),
+                        .height(52.dp)
+                        .testTag(TestTags.ADD_TASK_BUTTON),
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = PurplePrimary),
                 ) {
@@ -133,7 +136,9 @@ fun TaskListScreen(
                     OutlinedTextField(
                         value = searchQuery,
                         onValueChange = onSearchQueryChange,
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag(TestTags.SEARCH_FIELD),
                         placeholder = {
                             Text(
                                 text = stringResource(R.string.search_tasks_hint),
@@ -173,7 +178,10 @@ fun TaskListScreen(
                     text = stringResource(R.string.today),
                     style = MaterialTheme.typography.titleMedium,
                 )
-                TextButton(onClick = onDeleteAll) {
+                TextButton(
+                    onClick = onDeleteAll,
+                    modifier = Modifier.testTag(TestTags.DELETE_ALL_BUTTON),
+                ) {
                     Icon(
                         imageVector = Icons.Default.Delete,
                         contentDescription = stringResource(R.string.cd_delete_all),
@@ -189,12 +197,17 @@ fun TaskListScreen(
             }
 
             if (uiState.isEmpty) {
-                EmptyState(modifier = Modifier.weight(1f))
+                EmptyState(
+                    modifier = Modifier
+                        .weight(1f)
+                        .testTag(TestTags.EMPTY_STATE),
+                )
             } else {
                 LazyColumn(
                     modifier = Modifier
                         .weight(1f)
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .testTag(TestTags.TASK_LIST),
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 4.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {

@@ -24,10 +24,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.sevenlearn.todo.data.Task
+import com.sevenlearn.todo.ui.TestTags
 import com.sevenlearn.todo.ui.theme.CyanSecondary
 import com.sevenlearn.todo.ui.theme.ImportanceNormal
 import com.sevenlearn.todo.ui.theme.LightGray
@@ -48,6 +50,7 @@ fun TaskItem(
             .height(56.dp)
             .clip(RoundedCornerShape(8.dp))
             .background(MaterialTheme.colorScheme.surface)
+            .testTag(TestTags.taskItem(task.id))
             .combinedClickable(
                 onClick = onClick,
                 onLongClick = onLongClick,

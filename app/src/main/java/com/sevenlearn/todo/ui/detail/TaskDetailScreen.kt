@@ -43,12 +43,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.sevenlearn.todo.R
 import com.sevenlearn.todo.data.Task
+import com.sevenlearn.todo.ui.TestTags
 import com.sevenlearn.todo.ui.components.importanceColor
 import com.sevenlearn.todo.ui.theme.PurplePrimary
 import com.sevenlearn.todo.ui.theme.White
@@ -111,7 +113,10 @@ fun TaskDetailScreen(
                     )
                 },
                 navigationIcon = {
-                    IconButton(onClick = onBack) {
+                    IconButton(
+                        onClick = onBack,
+                        modifier = Modifier.testTag(TestTags.BACK_BUTTON),
+                    ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = stringResource(R.string.cd_back),
@@ -120,7 +125,10 @@ fun TaskDetailScreen(
                 },
                 actions = {
                     if (uiState.isEditMode) {
-                        IconButton(onClick = onDelete) {
+                        IconButton(
+                            onClick = onDelete,
+                            modifier = Modifier.testTag(TestTags.DELETE_TASK_BUTTON),
+                        ) {
                             Icon(
                                 imageVector = Icons.Default.Delete,
                                 contentDescription = stringResource(R.string.cd_delete_task),
@@ -144,7 +152,8 @@ fun TaskDetailScreen(
                     onClick = onSave,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(52.dp),
+                        .height(52.dp)
+                        .testTag(TestTags.SAVE_BUTTON),
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = PurplePrimary),
                     enabled = !uiState.isLoading,
@@ -162,7 +171,8 @@ fun TaskDetailScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding),
+                    .padding(padding)
+                    .testTag(TestTags.LOADING),
                 contentAlignment = Alignment.Center,
             ) {
                 CircularProgressIndicator(color = PurplePrimary)
@@ -188,21 +198,27 @@ fun TaskDetailScreen(
                         importance = Task.IMPORTANCE_HIGH,
                         selected = uiState.importance == Task.IMPORTANCE_HIGH,
                         onClick = { onImportanceChange(Task.IMPORTANCE_HIGH) },
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag(TestTags.IMPORTANCE_HIGH),
                     )
                     ImportanceChip(
                         label = stringResource(R.string.importance_normal),
                         importance = Task.IMPORTANCE_NORMAL,
                         selected = uiState.importance == Task.IMPORTANCE_NORMAL,
                         onClick = { onImportanceChange(Task.IMPORTANCE_NORMAL) },
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag(TestTags.IMPORTANCE_NORMAL),
                     )
                     ImportanceChip(
                         label = stringResource(R.string.importance_low),
                         importance = Task.IMPORTANCE_LOW,
                         selected = uiState.importance == Task.IMPORTANCE_LOW,
                         onClick = { onImportanceChange(Task.IMPORTANCE_LOW) },
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier
+                            .weight(1f)
+                            .testTag(TestTags.IMPORTANCE_LOW),
                     )
                 }
 
@@ -213,7 +229,8 @@ fun TaskDetailScreen(
                     onValueChange = onTitleChange,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .weight(1f),
+                        .weight(1f)
+                        .testTag(TestTags.TASK_TITLE_FIELD),
                     placeholder = { Text(stringResource(R.string.task_title_hint)) },
                     textStyle = MaterialTheme.typography.bodyLarge,
                     colors = TextFieldDefaults.colors(

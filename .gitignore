@@ -130,6 +130,8 @@ obj/
 .idea/migrations.xml
 .idea/inspectionProfiles/
 .idea/runConfigurations.xml
+!.idea/runConfigurations/
+!.idea/runConfigurations/**
 .idea/codeStyles/
 .idea/gradle.xml
 
