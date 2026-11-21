@@ -17,6 +17,7 @@ android {
         versionName = "2.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        resourceConfigurations += listOf("en", "fa")
     }
 
     buildTypes {

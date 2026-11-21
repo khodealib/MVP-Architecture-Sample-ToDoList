@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">لیست کارها</string>
+
+    <!-- Task list -->
+    <string name="add_new_task">افزودن کار جدید</string>
+    <string name="search_tasks_hint">جستجوی کارها…</string>
+    <string name="today">امروز</string>
+    <string name="delete_all">حذف همه</string>
+    <string name="empty_tasks_title">هنوز کاری نیست</string>
+    <string name="empty_tasks_subtitle">برای شروع یک کار جدید اضافه کنید</string>
+    <string name="cd_search">جستجو</string>
+    <string name="cd_add_task">افزودن کار</string>
+    <string name="cd_delete_all">حذف همه کارها</string>
+    <string name="cd_empty_state">لیست خالی کارها</string>
+
+    <!-- Task detail -->
+    <string name="edit_task">ویرایش کار</string>
+    <string name="new_task">کار جدید</string>
+    <string name="save_changes">ذخیره تغییرات</string>
+    <string name="importance">اهمیت</string>
+    <string name="importance_high">زیاد</string>
+    <string name="importance_normal">معمولی</string>
+    <string name="importance_low">کم</string>
+    <string name="task_title_hint">عنوان کار</string>
+    <string name="cd_back">بازگشت</string>
+    <string name="cd_delete_task">حذف کار</string>
+
+    <!-- Errors -->
+    <string name="error_enter_task_title">عنوان کار را وارد کنید</string>
+    <string name="error_task_not_found">کار پیدا نشد</string>
+</resources>

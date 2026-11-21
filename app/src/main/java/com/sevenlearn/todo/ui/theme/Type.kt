@@ -15,34 +15,36 @@ val PrimaryFontFamily = FontFamily(
     Font(R.font.primary_black, FontWeight.Black),
 )
 
-val TodoTypography = Typography(
+fun todoTypography(fontFamily: FontFamily = PrimaryFontFamily): Typography = Typography(
     headlineSmall = TextStyle(
-        fontFamily = PrimaryFontFamily,
+        fontFamily = fontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 18.sp,
         color = DefaultText,
     ),
     titleMedium = TextStyle(
-        fontFamily = PrimaryFontFamily,
+        fontFamily = fontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp,
         color = DefaultText,
     ),
     bodyLarge = TextStyle(
-        fontFamily = PrimaryFontFamily,
+        fontFamily = fontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         color = DefaultText,
     ),
     bodyMedium = TextStyle(
-        fontFamily = PrimaryFontFamily,
+        fontFamily = fontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         color = DefaultText,
     ),
     labelLarge = TextStyle(
-        fontFamily = PrimaryFontFamily,
+        fontFamily = fontFamily,
         fontWeight = FontWeight.Black,
         fontSize = 14.sp,
     ),
 )
+
+val TodoTypography = todoTypography()
