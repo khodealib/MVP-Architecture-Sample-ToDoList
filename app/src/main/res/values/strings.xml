@@ -1,3 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">To Do List</string>
+
+    <!-- Task list -->
+    <string name="add_new_task">Add New Task</string>
+    <string name="search_tasks_hint">Search tasks…</string>
+    <string name="today">Today</string>
+    <string name="delete_all">Delete All</string>
+    <string name="empty_tasks_title">No tasks yet</string>
+    <string name="empty_tasks_subtitle">Add a new task to get started</string>
+    <string name="cd_search">Search</string>
+    <string name="cd_add_task">Add task</string>
+    <string name="cd_delete_all">Delete all tasks</string>
+    <string name="cd_empty_state">Empty task list</string>
+
+    <!-- Task detail -->
+    <string name="edit_task">Edit Task</string>
+    <string name="new_task">New Task</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="importance">Importance</string>
+    <string name="importance_high">High</string>
+    <string name="importance_normal">Normal</string>
+    <string name="importance_low">Low</string>
+    <string name="task_title_hint">Task title</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_delete_task">Delete task</string>
+
+    <!-- Errors -->
+    <string name="error_enter_task_title">Enter task title</string>
+    <string name="error_task_not_found">Task not found</string>
 </resources>
