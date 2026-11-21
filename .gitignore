@@ -125,6 +125,13 @@ obj/
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 .idea/assetWizardSettings.xml
+.idea/AndroidProjectSystem.xml
+.idea/deploymentTargetSelector.xml
+.idea/migrations.xml
+.idea/inspectionProfiles/
+.idea/runConfigurations.xml
+.idea/codeStyles/
+.idea/gradle.xml
 
 # OS-specific files
 .DS_Store
